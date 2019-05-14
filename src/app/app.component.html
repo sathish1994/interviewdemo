@@ -1,0 +1,265 @@
+<div class="wrapper" style="height: auto; min-height: 80%;">
+
+  <header class="main-header">
+    <!-- Logo -->
+    <a class="logo">     
+      <span class="logo-lg"><b>Maximl</b></span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a  class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <li class="dropdown user user-menu">
+            <a class="dropdown-toggle">
+              <img src="../assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">Alexander Pierce</span>
+            </a>           
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar" style="height: auto;">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="../assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>Alexander Pierce</p>
+          <a ><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+      <!-- search form -->
+      <form  method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+        </div>
+      </form>
+      <!-- /.search form -->
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu tree" data-widget="tree">
+        
+        <li class="active">
+          <a>
+            <i class="fa fa-th"></i> <span>Dashboard</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-green">new</small>
+            </span>
+          </a>
+        </li>
+        
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper" style="min-height: 800px;">
+    
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Dashboard
+        <small>Preview page</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a ><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <!-- Small boxes (Stat box) -->
+      <div class="row" >
+        <div class="col-lg-4 col-xs-6" >
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <h3>{{this.weather[0].celsius}}&deg;C <a *ngIf="this.weather[0].city != 'Click here to enter City'" (click)="editCity(this.weather[0].city)"><small><i class="fa fa-pen" style="color:black"></i></small></a> </h3>
+              <p style="cursor: pointer;" (click)='cityChange(0)'>{{this.weather[0].city}} - <small>{{this.weather[0].weatherStatus}}</small></p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-cloud-moon-rain"></i>
+            </div>
+           
+          </div>
+        </div>
+        <!-- ./col1 -->
+        <div class="col-lg-4 col-xs-6">
+          <!-- small box1 -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h3>{{this.weather[1].celsius}}&deg;C <a *ngIf="this.weather[1].city != 'Click here to enter City'" (click)="editCity(this.weather[1].city)"><small><i class="fa fa-pen" style="color:black"></i></small></a></h3>
+              <p style="cursor: pointer;" (click)='cityChange(1)'>{{this.weather[1].city}} - <small>{{this.weather[1].weatherStatus}}</small></p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-cloud-meatball"></i>
+            </div>
+           
+          </div>
+        </div>
+        <!-- ./col 2-->
+        <div class="col-lg-4 col-xs-6">
+          <!-- small box 2-->
+          <div class="small-box bg-yellow">
+            <div class="inner">
+              <h3>{{this.weather[2].celsius}}&deg;C <a *ngIf="this.weather[2].city != 'Click here to enter City'" (click)="editCity(this.weather[2].city)"><small><i class="fa fa-pen" style="color:black"></i></small></a></h3>
+              <p style="cursor: pointer;" (click)='cityChange(2)'>{{this.weather[2].city}} - <small>{{this.weather[2].weatherStatus}}</small></p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-cloud-showers-heavy"></i>
+            </div>
+           
+          </div>
+        </div>
+        <!-- ./col 3-->
+        <div class="col-lg-4 col-xs-6">
+          <!-- small box 3-->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <h3>{{this.weather[3].celsius}}&deg;C <a *ngIf="this.weather[3].city != 'Click here to enter City'" (click)="editCity(this.weather[3].city)"><small><i class="fa fa-pen" style="color:black"></i></small></a></h3>
+              <p style="cursor: pointer;" (click)='cityChange(3)'>{{this.weather[3].city}} - <small>{{this.weather[3].weatherStatus}}</small></p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-cloud-rain"></i>
+            </div>
+           
+          </div>
+        </div>
+        <div class="col-lg-4 col-xs-6">
+          <!-- small box 4-->
+          <div class="small-box bg-violet">
+            <div class="inner">
+              <h3>{{this.weather[4].celsius}}&deg;C <a *ngIf="this.weather[4].city != 'Click here to enter City'" (click)="editCity(this.weather[4].city)"><small><i class="fa fa-pen" style="color:black"></i></small></a></h3>
+              <p style="cursor: pointer;" (click)='cityChange(4)'>{{this.weather[4].city}} - <small>{{this.weather[4].weatherStatus}}</small></p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-cloud-sun-rain"></i>
+            </div>
+            
+          </div>
+        </div>
+        <div class="col-lg-4 col-xs-6">
+          <!-- small box 5-->
+          <div class="small-box bg-blue">
+            <div class="inner">
+              <h3>{{this.weather[5].celsius}}&deg;C <a *ngIf="this.weather[5].city != 'Click here to enter City'" (click)="editCity(this.weather[5].city)"><small><i class="fa fa-pen" style="color:black"></i></small></a></h3>
+              <p style="cursor: pointer;" (click)='cityChange(5)'>{{this.weather[5].city}} - <small>{{this.weather[5].weatherStatus}}</small></p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-poo-storm"></i>
+            </div>
+            
+          </div>
+        </div>
+        <div class="col-lg-4 col-xs-6">
+          <!-- small box 6-->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <h3>{{this.weather[6].celsius}}&deg;C <a *ngIf="this.weather[6].city != 'Click here to enter City'" (click)="editCity(this.weather[6].city)"><small><i class="fa fa-pen" style="color:black"></i></small></a></h3>
+              <p style="cursor: pointer;" (click)='cityChange(6)'>{{this.weather[6].city}} - <small>{{this.weather[6].weatherStatus}}</small></p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+           
+          </div>
+        </div>
+        <div class="col-lg-4 col-xs-6">
+          <!-- small box 7-->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <h3>{{this.weather[7].celsius}}&deg;C <a *ngIf="this.weather[7].city != 'Click here to enter City'" (click)="editCity(this.weather[7].city)"><small><i class="fa fa-pen" style="color:black"></i></small></a></h3>
+              <p style="cursor: pointer;" (click)='cityChange(7)'>{{this.weather[7].city}} - <small>{{this.weather[7].weatherStatus}}</small></p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-cloud-rain"></i>
+            </div>
+            
+          </div>
+        </div>
+        <div class="col-lg-4 col-xs-6">
+          <!-- small box 8-->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <h3>{{this.weather[8].celsius}}&deg;C <a *ngIf="this.weather[8].city != 'Click here to enter City'" (click)="editCity(this.weather[8].city)"><small><i class="fa fa-pen" style="color:black"></i></small></a></h3>
+              <p style="cursor: pointer;" (click)='cityChange(8)'>{{this.weather[8].city}} - <small>{{this.weather[8].weatherStatus}}</small></p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-cloud-sun"></i>
+            </div>
+            
+          </div>
+        </div>
+        <!-- ./col -->
+      </div>
+      <!-- /.row -->
+
+</section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 2.4.0
+    </div>
+    <strong>Copyright © 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+    reserved.
+  </footer>
+
+  
+  <div class="control-sidebar-bg"></div>
+</div>
+
+<div class="modal fade in" id="citymodal" style="display: none; padding-right: 17px;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">Please enter the city</h4>
+      </div>
+      <div class="modal-body">
+          <form class="form-horizontal" >
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="City" class="col-sm-2 control-label">City</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="City" name="cityName"  #cityNames="ngModel" [(ngModel)]="city.cityName"  placeholder="Enter City">
+                  </div>
+                </div>
+                
+              </div>
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="GetcityWeather(city.cityName);">Save changes</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
